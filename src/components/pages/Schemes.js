@@ -108,9 +108,9 @@ const Schemes = () => {
           </h1>
         </section>
 
-        <button onClick={() => onExportClick()} className="export-btn">
-          {/* export */}
-        </button>
+        {/* <button onClick={() => onExportClick()} className="export-btn">
+          { export }
+        </button> */}
 
         <div
           className="ag-theme-alpine manage-table

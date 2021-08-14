@@ -54,6 +54,7 @@ const Contact = () => {
     <div>
       <Card />
       <br></br>
+      
       <div className="contact-form col-sm-10">
         <div className="contact-form__container">
           <h2 className="contact-form__text">CONTACT US👍😁 </h2>
@@ -127,7 +128,9 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </div>
+      </div>
+     
+    
   );
 };
 

@@ -7,6 +7,9 @@ const Home = () => {
   return (
     <div>
       <br />
+      <h1>Farmer's Friend</h1>
+      <p>The ultimate goal of farming is not the growing of crops, but the cultivation and perfection of human beings. </p>
+      <br/>
       <Carousel />
     </div>
   );

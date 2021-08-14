@@ -34,7 +34,7 @@ function App() {
       <Navbar />
 
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/mandi" component={Mandi} /> 
         <Route exact path="/Impd" component={Impd} /> 
         <Route exact path="/help" component={Helplines} /> 

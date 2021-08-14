@@ -9,6 +9,10 @@ input[type="submit"] {
   cursor: pointer;
   float: right;
 }
+.contact-form__text{
+  color: red;
+  font-size: 40px;
+}
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
