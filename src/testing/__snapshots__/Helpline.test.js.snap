@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow Helplines Page render the class name for paragarph 1`] = `
+<div>
+  <Slider />
+  <section />
+  <div
+    className="about-para"
+  >
+    <br />
+    <h1
+      data-testid="helpline"
+    >
+      Available Helplines 😊😊
+    </h1>
+    <br />
+    <h5
+      className="about-para__help"
+      data-testid="helpline__testcase"
+    >
+      Bharat Sarkar has started a Kisan Call Center for the support of the farmers.
+    </h5>
+  </div>
+  <br />
+  <div
+    className="ag-theme-alpine manage-table
+ container table-responsive-sm "
+  >
+    <AgGridReact
+      columnDefs={
+        Array [
+          Object {
+            "field": "title",
+            "headerName": "TITLE",
+          },
+          Object {
+            "field": "details",
+            "headerName": "DETAILS",
+          },
+        ]
+      }
+      defaultColDef={
+        Object {
+          "cellClass": "grid-cell-centered",
+          "editable": true,
+          "filter": true,
+          "flex": 1,
+          "floatingFilter": true,
+          "minWidth": 120,
+          "rowStyle": Object {
+            "rowStyle": Object {
+              "background": "transparent",
+              "color": "#192a56",
+            },
+          },
+          "sortable": true,
+        }
+      }
+      disableStaticMarkup={false}
+      height="350px"
+      legacyComponentRendering={false}
+      maxComponentCreationTimeMs={1000}
+      onGridReady={[Function]}
+      pagination={true}
+      paginationAutoPageSize={true}
+      paginationPageSize={10}
+      rowStyle={
+        Object {
+          "background": "transparent",
+          "color": "#192a56",
+        }
+      }
+    />
+  </div>
+  <br />
+  <br />
+  <Footerpage />
+</div>
+`;

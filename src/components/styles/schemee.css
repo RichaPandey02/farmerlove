@@ -1,0 +1,26 @@
+/* Scheme page css */
+.delete-Schemes {
+  background-color: #ff3838;
+  width: 80px;
+  color: white;
+}
+
+h1 {
+  color: #ea2027;
+  text-align: center;
+}
+
+.export-btn {
+  background-color: green;
+  color: white;
+}
+.ag-theme-alpine {
+  height: 500px;
+}
+.grid-cell-centered {
+  text-align: center;
+}
+
+.ag-header-cell-label {
+  justify-content: center;
+}

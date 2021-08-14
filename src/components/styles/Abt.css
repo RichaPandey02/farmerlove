@@ -1,0 +1,22 @@
+.wrapper > div {
+  background-color: #eee;
+  padding: 1em;
+  grid-auto-rows: minmax(200px, auto);
+  align-items: flex-start;
+}
+.wrapper > div:nth-child(odd) {
+  background-color: #ddd;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+
+  grid-gap: 4em;
+  align-items: stretch;
+}
+h1{
+  color:'#eb2f06'
+}
+.material-icons {
+font-size: 100px;
+}

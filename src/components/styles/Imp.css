@@ -1,0 +1,13 @@
+/* Important Address page css */
+h1 {
+  color: "#eb2f06";
+  text-align: center;
+  text-transform: capitalize;
+}
+.deleteAddress {
+  background-color: #ea2027;
+  width: 80px;
+}
+.ag-theme-alpine {
+  height: 500px;
+}

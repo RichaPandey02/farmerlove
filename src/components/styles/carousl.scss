@@ -1,0 +1,95 @@
+$number-of-items: 3;
+//1280px
+
+.ef-carousel {
+  text-align: center;
+  position: relative;
+  max-width: 1000px;
+  height: fit-content;
+  margin: 0 auto;
+  overflow: hidden;
+  
+  &__state {
+    display: none;
+  }
+  
+  &__next, &__prev {
+    width: 60px;
+    height: 60px;
+    line-height: 28px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    color: #000;
+    background-color: #fff;
+    opacity: 0.5;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -20px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    z-index: 1;
+    transition: opacity 100ms linear;
+    
+    &:before {
+      content: '>'
+    }
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  &__prev {
+    right: auto;
+    left: 10px;
+    
+    &:before {
+      content: '<'
+    }
+  }
+  
+  &__dot {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  &__items {
+    white-space: nowrap;
+    font-size: 0;
+    margin: 0 0 5px;
+  }
+  
+  &__item {
+    max-width: 120%;
+    vertical-align: top;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 600ms linear;
+  }
+  
+  &__item:first-child {
+    position: relative;
+  }
+  
+  @for $i from 1 through $number-of-items {
+    &__state:checked:nth-child(#{$i}) ~ &__dots &__dot:nth-child(#{$i}) {
+      background-color: rgba(0,0,0,0.8);
+    }
+    &__state:checked:nth-child(#{$i}) ~ &__items &__item:nth-child(#{$i}) {
+      opacity: 1;
+    }
+    &__state:checked:nth-child(#{$i}) ~ &__prev-group &__prev:nth-child(#{$i}),
+    &__state:checked:nth-child(#{$i}) ~ &__next-group &__next:nth-child(#{$i}) {
+      display: block;
+    }
+  }
+}

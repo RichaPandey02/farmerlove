@@ -1,0 +1,28 @@
+/* For Aggrid table styling */
+
+.ag-theme-alpine {
+  /* for heading name color */
+  --ag-foreground-color: black;
+  /* for table background color  */
+  --ag-background-color: #f5f6fa;
+}
+.ag-theme-alpine .ag-header {
+  background-color: transparent;
+}
+.ag-group {
+  border-color: black;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px black;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}

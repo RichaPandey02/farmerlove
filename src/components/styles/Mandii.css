@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+  color: "#eb2f06";
+  text-transform: capitalize;
+}
+.deleteMandi {
+  background-color: #EA2027;
+  width: 80px;
+}
+.ag-theme-alpine {
+  height: 500px;
+}
+
