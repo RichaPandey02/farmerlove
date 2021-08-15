@@ -3,6 +3,8 @@ import cnt from "../styles/cnt.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Card from "./Card";
+import { pattern } from "react-dom-factories";
+import Footer from "../layout/Footer"
 
 const Contact = () => {
   let history = useHistory();
@@ -38,13 +40,42 @@ const Contact = () => {
     }
     setdetails(detailss);
   };
+
+  let patternname = /^[a-zA-Z ]{2,30}$/
   const onSubmit = async (e) => {
-    if (user.length < 3 || topic.length < 5 || details.length < 10) {
+    if (
+      user.length < 3 ||
+      user.value === null ||
+      topic.value === null ||
+      details.value ===null  ||
+      topic.length < 5 ||
+      details.length < 10 
+    
+      
+      
+    ) {
       alert("type correct value");
-    } else {
+    }
+  
+     if (patternname.test(user)) {
+     alert("please enter valid value")
+     }
+    //   if(pattern.test(user.value))
+    // {
+    //   alert("type correct value")
+    // }
+    // if(!pattern.test(topic))
+    // {
+    //   alert("type correct value")
+    // }
+    //  if(!pattern.test(details))
+    // {
+    //   alert("type correct value")
+    // }
+    else {
       e.preventDefault();
       await axios.post("http://localhost:3000/api/contactUs", user);
-      history.push("/");
+      history.push("/home");
 
       alert("you query has been submitted..... 😊😊");
     }
@@ -55,23 +86,24 @@ const Contact = () => {
       <Card />
       <br></br>
       
-      <div className="contact-form col-sm-10">
-        <div className="contact-form__container">
-          <h2 className="contact-form__text">CONTACT US👍😁 </h2>
-          <form onSubmit={(e) => onSubmit(e)}>
-            <div className="form-group">
+      <div className="container">
+        <div class="hero-large ">ContactUs</div>
+        <form onSubmit={(e) => onSubmit(e)}>
+          <ul>
+            <li>
               <label id="fname" for="search">
-                FullName:
+                <span>
+                  Name <span class="required-star">*</span>
+                </span>
               </label>
               <input
                 type="text"
-                placeholder="Enter Your FullName"
                 name="Fullname"
                 id="search"
+                required
                 value={Fullname}
                 onChange={(e) => onInputChange(e)}
               />
-
               {userErr ? (
                 <span className="contact-form__txt">
                   {" "}
@@ -80,18 +112,20 @@ const Contact = () => {
               ) : (
                 ""
               )}
-            </div>
-            <br />
-            <div className="form-group">
+            </li>
+            <li>
               <label id="fname2" for="search2">
-                Topic:
+                <span>
+                  Topic<span class="required-star">*</span>
+                </span>
               </label>
               <input
                 type="text"
                 id="search2"
-                placeholder="Enter Your Topic"
                 name="Topic"
+                required
                 value={Topic}
+                required
                 onChange={(e) => onInputChange(e)}
               />
               {topicErr ? (
@@ -101,16 +135,16 @@ const Contact = () => {
               ) : (
                 ""
               )}
-            </div>
-            <br />
-            <div className="form-group">
-              <label id="fname1" for="search1">
-                Details
+            </li>
+            <li>
+              <label for="details">
+                <span>
+                  Details<span className="required-star">*</span>
+                </span>
               </label>
               <input
-                type="text"
-                id="search1"
-                placeholder="Enter Your Details"
+                type="textarea rows=4"
+                cols="50"
                 name="Details"
                 value={Details}
                 onChange={(e) => onInputChange(e)}
@@ -122,15 +156,16 @@ const Contact = () => {
               ) : (
                 ""
               )}
-            </div>
-            <br></br>
-            <button className="submit">Submit</button>
-          </form>
-        </div>
+            </li>
+            <li>
+              <input type="submit" />
+            </li>
+          </ul>
+        </form>
+        
       </div>
-      </div>
-     
-    
+      <Footer/>
+    </div>
   );
 };
 

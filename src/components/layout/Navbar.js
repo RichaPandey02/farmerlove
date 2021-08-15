@@ -12,7 +12,7 @@ function NavBar() {
    let a = window.location.pathname;
 
   return (
-    <div>
+    <div className="nav-margin">
       <div className="nav">
         <input type="checkbox" id="nav-check" />
         <div className="nav__header">
