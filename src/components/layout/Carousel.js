@@ -1,9 +1,9 @@
 //Carousel for Home Page......
 
 import React from "react";
-import Carousel from "react-grid-carousel";
+// import Carousel from "react-grid-carousel";
 import carousl from "../styles/carousl.scss";
-import $ from "jquery";
+// import $ from "jquery";
 
 const Carousel1 = () => {
   return (

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Nav from '../styles/Nav.css'
 import { NavLink } from "react-router-dom";
 // function myFunction()
@@ -9,7 +10,7 @@ import { NavLink } from "react-router-dom";
 //   }
 // }
 function NavBar() {
-   let a = window.location.pathname;
+  //  let a = window.location.pathname;
 
   return (
     <div className="nav-margin">
@@ -28,9 +29,9 @@ function NavBar() {
         </div>
         <div className="nav__btn">
           <label for="nav-check">
-            <span>...</span>
-            <span>...</span>
-            <span>...</span>
+            <span className="nav_span">.</span>
+            <span className="nav_span">.</span>
+            <span className="nav_span">.</span>
           </label>
         </div>
         

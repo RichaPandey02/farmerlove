@@ -92,9 +92,4 @@ test("to check whether Footer component rendered", () => {
   );
 });  
 
-describe('Mount vs Shallow',()=>{
-  it('snapshot 3',()=>{
-    let wrapper=mount(<Helplines/>)
-    console.log(wrapper.debug());
-  })
-})
+

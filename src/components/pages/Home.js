@@ -11,6 +11,8 @@ const Home = () => {
       <p>The ultimate goal of farming is not the growing of crops, but the cultivation and perfection of human beings. </p>
       <br/>
       <Carousel />
+      <br/><br/>
+      <Footer/>
     </div>
   );
 };

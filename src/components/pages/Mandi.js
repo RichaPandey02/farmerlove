@@ -49,7 +49,7 @@ const Mandi = () => {
       headerName: "ACTION",
       cellRendererFramework: (params) => (
         <div>
-          <button onClick={() => cellDeleteing(params)} className="deleteMandi">
+          <button onClick={() => cellDeleteing(params)} data-testid="id-mandi" className="deleteMandi">
             Delete
           </button>
         </div>

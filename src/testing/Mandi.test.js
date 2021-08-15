@@ -62,6 +62,12 @@ test("should render the Heading ", () => {
   expect(element).toBeInTheDocument();
   expect(element).toHaveTextContent("Currently Available Mandi's");
 });
+test("test for testid ", () => {
+  render(<Mandi />);
+  const element = screen.getByTestId("id-mandi");
+  expect(element).toBeInTheDocument();
+  expect(element).not.toContainHTML("<h5>");
+});
 it("to be equal to 1", () => {
   const num = 1;
   expect(num).toEqual(1);
@@ -79,3 +85,20 @@ test("to check whether Footer component rendered", () => {
     </BrowserRouter>
   );
 });  
+
+it('render the snapshot',()=>{
+  let wrapper=shallow(<Mandi/>)
+  console.log(wrapper.debug())
+  expect(wrapper).toMatchSnapshot();
+})
+  it('render the class',()=>{
+    let wrapper=shallow(<Mandi/>)
+    console.log(wrapper.debug())
+    expect(wrapper.exists('.deleteMandi')).toEqual(true)
+})
+
+it('render the class name for Aggrid',()=>{
+  let wrapper=shallow(<Mandi/>)
+  console.log(wrapper.debug())
+  expect(wrapper.exists('.ag-theme-alpine')).toEqual(true)
+})

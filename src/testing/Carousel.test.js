@@ -9,16 +9,26 @@ describe('shallow Carousel Page',()=>{
     it('render the carousel Page',()=>{
         let wrapper=shallow(<Carousel/>)
         console.log(wrapper.debug())
-        expect(wrapper.exists('.carousel')).toEqual(true)
+        expect(wrapper.exists('.ef-carousel')).toEqual(true)
     })
     it('render the class',()=>{
         let wrapper=shallow(<Carousel/>)
         console.log(wrapper.debug())
-        expect(wrapper.exists('.carousel-slider')).toEqual(true)
+        expect(wrapper.exists('ef-carousel__items')).toEqual(true)
     })
     it('render the className for arrow',()=>{
         let wrapper=shallow(<Carousel/>)
         console.log(wrapper.debug())
-        expect(wrapper.exists('.prev-arrow arrow')).toEqual(true)
+        expect(wrapper.exists('ef-carousel__next-group')).toEqual(true)
+    })
+    it('render the className for left arrow',()=>{
+        let wrapper=shallow(<Carousel/>)
+        console.log(wrapper.debug())
+        expect(wrapper.exists('ef-carousel__prev-group')).toEqual(true)
+    })
+    it('render the className for right arrow',()=>{
+        let wrapper=shallow(<Carousel/>)
+        console.log(wrapper.debug())
+        expect(wrapper.exists('ef-carousel__dots')).toEqual(true)
     })
 })

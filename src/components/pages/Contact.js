@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import cnt from "../styles/cnt.css";
+import contactus from "../styles/contactus.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Card from "./Card";
@@ -60,18 +60,7 @@ const Contact = () => {
      if (patternname.test(user)) {
      alert("please enter valid value")
      }
-    //   if(pattern.test(user.value))
-    // {
-    //   alert("type correct value")
-    // }
-    // if(!pattern.test(topic))
-    // {
-    //   alert("type correct value")
-    // }
-    //  if(!pattern.test(details))
-    // {
-    //   alert("type correct value")
-    // }
+    
     else {
       e.preventDefault();
       await axios.post("http://localhost:3000/api/contactUs", user);
@@ -87,7 +76,7 @@ const Contact = () => {
       <br></br>
       
       <div className="container">
-        <div class="hero-large ">ContactUs</div>
+        <div class="hero-large "><h2>Contact Us</h2></div>
         <form onSubmit={(e) => onSubmit(e)}>
           <ul>
             <li>
@@ -137,14 +126,15 @@ const Contact = () => {
               )}
             </li>
             <li>
-              <label for="details">
-                <span>
+              <label for="details" id="search">
+                {/* <span> */}
                   Details<span className="required-star">*</span>
-                </span>
+                {/* </span> */}
               </label>
               <input
                 type="textarea rows=4"
                 cols="50"
+                id="search"
                 name="Details"
                 value={Details}
                 onChange={(e) => onInputChange(e)}

@@ -104,7 +104,7 @@ const Schemes = () => {
         <section>
           <h1>
             <br />
-            Shemes Available For Market Price
+            Schemes Available For Market Price
           </h1>
         </section>
 
