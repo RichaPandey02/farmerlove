@@ -98,7 +98,7 @@ const ImportantAddress = () => {
     <div>
       <Card />
       <br />
-      <h1>Soil Testing Labs</h1>
+      <h1 className="impd-heading">Soil Testing Labs</h1>
       <br></br>
       <div
         className="ag-theme-alpine manage-table

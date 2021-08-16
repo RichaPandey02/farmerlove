@@ -102,7 +102,7 @@ const Schemes = () => {
         <Card />
 
         <section>
-          <h1>
+          <h1 className="scheme-heading">
             <br />
             Schemes Available For Market Price
           </h1>

@@ -92,7 +92,7 @@ const Mandi = () => {
     <div>
       <Card />
       <br />
-      <h1 data-testid="testcase"> Currently Available Mandi's</h1>
+      <h1 className="Mandi-heading" data-testid="testcase"> Currently Available Mandi's</h1>
       <br />
       <div
         className="ag-theme-alpine manage-table

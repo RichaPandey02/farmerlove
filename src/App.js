@@ -20,10 +20,8 @@ import Impd from './components/pages/Impd'
 import Schemes from './components/pages/Schemes';
 // import '../node_modules/bootstrap/dist/css/bootstrap.css';
 // import '../node_modules/bootstrap/dist/js/bootstrap.js'
-import About from './components/pages/About';
+
 import Mandi from './components/pages/Mandi'
-import Rabi from './components/pages/Rabi';
-import Khareef from './components/pages/Khareef';
 import Helplines from './components/pages/Helplines'
 
 
@@ -43,11 +41,11 @@ function App() {
         <Route exact path="/home" component={Home} />
         
         
-        <Route exact path="/about" component={About}/>
+       
         <Route exact path="/schemes" component={Schemes} />
         <Route exact path="/contactus" component={Contact} />
-        <Route exact path="/Rabi" component={Rabi} /> 
-        <Route exact path="/Khareef" component={Khareef} /> 
+        {/* <Route exact path="/Rabi" component={Rabi} />  */}
+        {/* <Route exact path="/Khareef" component={Khareef} />  */}
         <Route component={NotFound} /> 
       </Switch>
       {/* <Footer/> */}

@@ -1,6 +1,6 @@
 /* Important Address page css */
-h1 {
-  color: "#eb2f06";
+.impd-heading{
+  color: red;
   text-align: center;
   text-transform: capitalize;
 }

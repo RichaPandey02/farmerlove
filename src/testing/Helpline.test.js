@@ -1,7 +1,7 @@
 import Helplines from "../components/pages/Helplines";
 import { render, screen, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-
+import  rowStyle from 'ag-grid-community'
 import Carousel from "../components/layout/Carousel";
 import { BrowserRouter } from "react-router-dom";
 import Footer from "../components/layout/Footer";
@@ -52,7 +52,10 @@ test("to check whether Helplines component rendered", () => {
     </BrowserRouter>
   );
 });
-
+it("the function name shloud be",()=>{
+  const functionname=rowStyle();
+  expect(functionname).toEqual(functionname);
+})
 it("the background color should be #192a56", () => {
   const color = "#192a56";
   expect(color).toEqual("#192a56");

@@ -1,23 +1,15 @@
-// import {configure} from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16';
-// import {Contact} from '../components/pages/Contact'
-// import {shallow} from 'enzyme';
-
-// configure({adapter:new Adapter()});
-// describe('shallow Contactus Page',()=>{
-//     it('render the contactus Page',()=>{
-//         let wrapper=shallow(<Contact/>)
-//         console.log(wrapper.debug())
-//         expect(wrapper.exists('.container')).toEqual(true)
-//     })
-//     it('render the class',()=>{
-//         let wrapper=shallow(<Contact/>)
-//         console.log(wrapper.debug())
-//         expect(wrapper.exists('.container__hero-large')).toEqual(true)
-//     })
-//     it('render the className for text input',()=>{
-//         let wrapper=shallow(<Contact/>)
-//         console.log(wrapper.debug())
-//         expect(wrapper.exists('.contact-form__txt')).toEqual(true)
-//     })
-// })
+import {configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import {Contact} from '../components/pages/Contact'
+import {mount} from 'enzyme';
+import { render, screen, cleanup } from "@testing-library/react";
+// import Form from './Form'
+configure({adapter:new Adapter()});
+test('renders a form with title, content, tags, and a submit button', () => {
+    render(<Contact />)
+    screen.getByLabelText(/Name/i)
+    screen.getByLabelText(/Topic/i)
+    screen.getByLabelText(/Details/i)
+    screen.getByText(/submit/i)
+  })
+  

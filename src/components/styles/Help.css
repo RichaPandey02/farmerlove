@@ -1,7 +1,5 @@
 /* Helpline page css */
-h1 {
-  color: #fc4366;;
-}
+
 h5 {
   color: "#eb2f06";
 }
@@ -12,6 +10,10 @@ h5 {
 }
 .ag-theme-alpine {
   height: 500px;
+}
+.about-para__helpline{
+color: red;
+text-align: center;
 }
 .about-para__help {
   text-align: center;

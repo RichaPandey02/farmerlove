@@ -1,6 +1,13 @@
 import { render,screen } from "@testing-library/react";
 import App from './App';
-test('renders learn react Link',()=>{
-    // const LinkElement=screen.getByText(/learn react/i);
-    // expect(LinkElement).toBeInTheDocument();
-})
+ import userEvent from '@testing-library/user-event'
+  import {BrowserRouter} from 'react-router-dom'
+ test('render the App component', () => {
+//     window.history.pushState({}, 'Test page', '/')
+    render(
+      <BrowserRouter>
+         <App/>
+       </BrowserRouter>,
+    )
+  
+ })
