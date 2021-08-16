@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Nav from '../styles/Nav.css'
 import { NavLink } from "react-router-dom";
@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 //     item.className=(item.className==='menu-list')?'menu-list unhidden': 'menu-list';
 //   }
 // }
-function NavBar() {
+const NavBar=()=> {
   //  let a = window.location.pathname;
 
   return (

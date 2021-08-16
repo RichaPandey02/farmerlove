@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render the snapshot 1`] = `
+<div>
+  <Slider />
+  <br />
+  <h1
+    data-testid="testcase"
+  >
+     Currently Available Mandi's
+  </h1>
+  <br />
+  <div
+    className="ag-theme-alpine manage-table
+ container table-responsive-sm"
+  >
+    <AgGridReact
+      columnDefs={
+        Array [
+          Object {
+            "field": "STATE",
+            "headerName": "STATE",
+          },
+          Object {
+            "field": "DIST",
+            "headerName": "DIST",
+          },
+          Object {
+            "field": "MARKET",
+            "headerName": "MARKET",
+          },
+          Object {
+            "field": "GODOWN",
+            "headerName": "GODOWN",
+          },
+          Object {
+            "field": "COLDSTORAGE",
+            "headerName": "COLDSTORAGE",
+          },
+          Object {
+            "field": "RAILWAY",
+            "headerName": "RAILWAY",
+          },
+          Object {
+            "cellRendererFramework": [Function],
+            "headerName": "ACTION",
+          },
+        ]
+      }
+      defaultColDef={
+        Object {
+          "cellClass": "grid-cell-centered",
+          "editable": true,
+          "filter": true,
+          "flex": 1,
+          "floatingFilter": true,
+          "minWidth": 120,
+          "sortable": true,
+        }
+      }
+      disableStaticMarkup={false}
+      legacyComponentRendering={false}
+      maxComponentCreationTimeMs={1000}
+      onCellEditingStopped={[Function]}
+      onGridReady={[Function]}
+      onRowDoubleClicked={[Function]}
+      pagination={true}
+      paginationAutoPageSize={true}
+      paginationPageSize={10}
+      rowStyle={
+        Object {
+          "background": "transparent",
+          "color": "#192a56",
+        }
+      }
+    />
+  </div>
+  <br />
+  <br />
+  <Footerpage />
+</div>
+`;

@@ -16,7 +16,7 @@
   height: 60px;
   width: 100%;
     
-    background-color: #fc4366;
+    background-color:#0a3d62;
   position: relative;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .nav__link--color:hover {
-  color: black;
+  color: red;
   text-decoration: none;
 }
 
@@ -90,7 +90,7 @@
     position: absolute;
     display: block;
     width: 100%;
-    background-color:#fc4366;
+    background-color:black;
     height: 0px;
     -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
@@ -112,7 +112,7 @@
 }
 
 .nav__link--active {
-  color: black;
+  color: red;
   font-weight: bold;
 }
 
@@ -164,7 +164,7 @@
   float: right;
 }
 .nav_span{
-  color: #fc4366;
+  color: black;
 }
 
 

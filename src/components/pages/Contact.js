@@ -73,16 +73,16 @@ const Contact = () => {
   return (
     <div>
       <Card />
-      <br></br>
+
       
       <div className="container">
-        <div class="hero-large "><h2>Contact Us</h2></div>
+        <div class=" container__hero-large "><h1 className="container__name">Contact Us</h1></div>
         <form onSubmit={(e) => onSubmit(e)}>
           <ul>
             <li>
               <label id="fname" for="search">
                 <span>
-                  Name <span class="required-star">*</span>
+                  Name <span class="container__required-star">*</span>
                 </span>
               </label>
               <input
@@ -105,7 +105,7 @@ const Contact = () => {
             <li>
               <label id="fname2" for="search2">
                 <span>
-                  Topic<span class="required-star">*</span>
+                  Topic<span class="container__required-star">*</span>
                 </span>
               </label>
               <input
@@ -127,9 +127,9 @@ const Contact = () => {
             </li>
             <li>
               <label for="details" id="search">
-                {/* <span> */}
-                  Details<span className="required-star">*</span>
-                {/* </span> */}
+                 <span> 
+                  Details<span className="container__required-star">*</span>
+                 </span> 
               </label>
               <input
                 type="textarea rows=4"

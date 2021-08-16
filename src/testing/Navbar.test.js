@@ -22,17 +22,17 @@ describe('shallow Navbar Page',()=>{
     it('render the className for navlink',()=>{
         let wrapper=shallow(<NavBar/>)
         console.log(wrapper.debug())
-        expect(wrapper.exists('nav__link--active')).toEqual(true)
+        expect(wrapper.exists('.nav__link--active')).toEqual(true)
     })
     it('render the className for left arrow',()=>{
         let wrapper=shallow(<NavBar/>)
         console.log(wrapper.debug())
-        expect(wrapper.exists('ef-carousel__prev-group')).toEqual(true)
+        expect(wrapper.exists('.nav__title')).toEqual(true)
     })
     it('render the className for right arrow',()=>{
         let wrapper=shallow(<NavBar/>)
         console.log(wrapper.debug())
-        expect(wrapper.exists('nav__link--color')).toEqual(true)
+        expect(wrapper.exists('.nav__link--color')).toEqual(true)
     })
 })
 

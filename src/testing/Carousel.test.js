@@ -11,24 +11,30 @@ describe('shallow Carousel Page',()=>{
         console.log(wrapper.debug())
         expect(wrapper.exists('.ef-carousel')).toEqual(true)
     })
+
     it('render the class',()=>{
         let wrapper=shallow(<Carousel/>)
         console.log(wrapper.debug())
-        expect(wrapper.exists('ef-carousel__items')).toEqual(true)
+        expect(wrapper.exists('.ef-carousel__items')).toEqual(true)
+    })
+    it('render the class for input',()=>{
+        let wrapper=shallow(<Carousel/>)
+        console.log(wrapper.debug())
+        expect(wrapper.exists('.ef-carousel__state')).toEqual(true)
     })
     it('render the className for arrow',()=>{
         let wrapper=shallow(<Carousel/>)
         console.log(wrapper.debug())
-        expect(wrapper.exists('ef-carousel__next-group')).toEqual(true)
+        expect(wrapper.exists('.ef-carousel__next-group')).toEqual(true)
     })
     it('render the className for left arrow',()=>{
         let wrapper=shallow(<Carousel/>)
         console.log(wrapper.debug())
-        expect(wrapper.exists('ef-carousel__prev-group')).toEqual(true)
+        expect(wrapper.exists('.ef-carousel__prev-group')).toEqual(true)
     })
     it('render the className for right arrow',()=>{
         let wrapper=shallow(<Carousel/>)
         console.log(wrapper.debug())
-        expect(wrapper.exists('ef-carousel__dots')).toEqual(true)
+        expect(wrapper.exists('.ef-carousel__dots')).toEqual(true)
     })
 })

@@ -96,7 +96,9 @@ ul {
   margin: 0;
   padding: 0;
 }
-
+.container__name{
+  color: red;
+}
 li {
   padding: 0.3em;
 }
@@ -110,7 +112,7 @@ span {
   text-transform: uppercase;
 }
 input[type="submit"] {
-  background: #fc4366;
+  background: green;
   color: white;
   font-weight: 700;
   font-size: 1.2rem;
@@ -137,7 +139,7 @@ form {
   overflow: hidden;
 }
 
-.required-star {
+.container__required-star {
   color: #fc4366;
 }
 
@@ -159,7 +161,7 @@ textarea {
   line-height: 29px;
   line-height: 2rem;
 }
-.hero-large {
+.container__hero-large {
   display: inline-block;
   color: red;
   font-size: 20px;
