@@ -39,7 +39,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom-fourteen",
     "eject": "react-scripts eject",
     "coverage": "jest --collect-coverage"
   },
@@ -78,6 +78,7 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
     "jest": "^26.6.0",
+    "jest-environment-jsdom-fourteen": "^1.0.1",
     "react-test-renderer": "^17.0.2"
   }
 }

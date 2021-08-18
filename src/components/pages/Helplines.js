@@ -55,7 +55,9 @@ const Helplines = () => {
       <section></section>
       <div className="about-para">
         <br />
-        <h1 className="about-para__helpline" data-testid="helpline">Available Helplines 😊😊</h1>
+        <h1 className="about-para__helpline" data-testid="helpline">
+          Available Helplines 😊😊
+        </h1>
         <br></br>
 
         <h5 data-testid="helpline__testcase" className="about-para__help">

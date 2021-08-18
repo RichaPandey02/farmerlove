@@ -49,7 +49,11 @@ const Mandi = () => {
       headerName: "ACTION",
       cellRendererFramework: (params) => (
         <div>
-          <button onClick={() => cellDeleteing(params)} data-testid="id-mandi" className="deleteMandi">
+          <button
+            onClick={() => cellDeleteing(params)}
+            data-testid="testcase"
+            className="deleteMandi"
+          >
             Delete
           </button>
         </div>
@@ -77,7 +81,7 @@ const Mandi = () => {
 
     axios.put(`http://localhost:3000/api/mandi/${id}`, resp.data);
     console.log(resp);
-    alert("your data has been updated😊😊");
+    // alert("your data has been updated😊😊");
   };
   const cellDeleteing = (resp) => {
     resp.api.applyTransaction({
@@ -85,14 +89,17 @@ const Mandi = () => {
     });
     id = resp.data._id;
     axios.delete(`http://localhost:3000/api/mandi/${id}`, resp.data);
-    alert("your data has been deleted");
+    // alert("your data has been deleted");
   };
 
   return (
     <div>
       <Card />
       <br />
-      <h1 className="Mandi-heading" data-testid="testcase"> Currently Available Mandi's</h1>
+      <h1 className="Mandi-heading" data-testid="testcase">
+        {" "}
+        Currently Available Mandi's
+      </h1>
       <br />
       <div
         className="ag-theme-alpine manage-table

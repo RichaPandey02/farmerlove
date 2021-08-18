@@ -5,6 +5,7 @@ exports[`render the snapshot 1`] = `
   <Slider />
   <br />
   <h1
+    className="Mandi-heading"
     data-testid="testcase"
   >
      Currently Available Mandi's

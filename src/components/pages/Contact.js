@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import contactus from "../styles/contactus.css";
+import contactus from "../styles/contactus.scss";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Card from "./Card";
-import { pattern } from "react-dom-factories";
-import Footer from "../layout/Footer"
+import Footer from "../layout/Footer";
 
 const Contact = () => {
+  
+    
+   
+    
   let history = useHistory();
   const [user, setUser] = useState({});
   const [topic, settopic] = useState({});
@@ -17,11 +20,16 @@ const Contact = () => {
   const [detailsErr, setdetailsErr] = useState(false);
 
   const { Fullname, Topic, Details } = user;
+  
   const onInputChange = (e) => {
+  
+    let pattern = /^[a-zA-Z ]/;
     let item = e.target.value;
-    if (item.length < 3) {
+    if (item.length < 3  ) {
       setUserErr(true);
-    } else {
+    }
+    
+    else {
       setUserErr(false);
     }
     setUser(item);
@@ -41,25 +49,22 @@ const Contact = () => {
     setdetails(detailss);
   };
 
-  let patternname = /^[a-zA-Z ]{2,30}$/
+  
   const onSubmit = async (e) => {
     if (
       user.length < 3 ||
       user.value === null ||
       topic.value === null ||
-      details.value ===null  ||
+      details.value === null ||
       topic.length < 5 ||
-      details.length < 10 
-    
-      
-      
+      details.length < 10
     ) {
       alert("type correct value");
     }
-  
-     if (patternname.test(user)) {
-     alert("please enter valid value")
-     }
+
+    // if (patternname.test(user)) {
+    //   alert("please enter valid value");
+    // } 
     
     else {
       e.preventDefault();
@@ -71,92 +76,181 @@ const Contact = () => {
   };
 
   return (
+    // <div>
+    //   <Card />
+
+    //   <div className="container">
+    //     <div class=" container__hero-large ">
+    //       <h1 className="container__name">Contact Us</h1>
+    //     </div>
+    //     <form onSubmit={(e) => onSubmit(e)}>
+    //       <ul>
+    //         <li>
+    //           <label id="fname" for="search">
+    //             <span>
+    //               Name <span class="container__required-star">*</span>
+    //             </span>
+    //           </label>
+    //           <input
+    //             type="text"
+    //             name="Fullname"
+    //             id="search"
+    //             required
+    //             required
+    //             minLength={3}
+    //             maxLength={50}
+    //             value={Fullname}
+    //             onChange={(e) => onInputChange(e)}
+    //           />
+    //           {userErr ? (
+    //             <span className="contact-form__txt">
+    //               {" "}
+    //               Please Type correct value...
+    //             </span>
+    //           ) : (
+    //             ""
+    //           )}
+    //         </li>
+    //         <li>
+    //           <label id="fname2" for="search2">
+    //             <span>
+    //               Topic<span class="container__required-star">*</span>
+    //             </span>
+    //           </label>
+    //           <input
+    //             type="text"
+    //             id="search2"
+    //             name="Topic"
+    //             required
+    //             value={Topic}
+    //             required
+    //             onChange={(e) => onInputChange(e)}
+    //           />
+    //           {topicErr ? (
+    //             <span className="contact-form__txt">
+    //               Please Type corrcet value..
+    //             </span>
+    //           ) : (
+    //             ""
+    //           )}
+    //         </li>
+    //         <li>
+    //           <label for="details" id="search">
+    //             <span>
+    //               Details<span className="container__required-star">*</span>
+    //             </span>
+    //           </label>
+    //           <input
+    //             type="textarea rows=4"
+    //             cols="50"
+    //             id="search"
+    //             name="Details"
+    //             value={Details}
+    //             onChange={(e) => onInputChange(e)}
+    //           />
+    //           {detailsErr ? (
+    //             <span className="contact-form__txt">
+    //               Please Type corrcet value..
+    //             </span>
+    //           ) : (
+    //             ""
+    //           )}
+    //         </li>
+    //         <li>
+    //           <input type="submit" />
+    //         </li>
+    //       </ul>
+    //     </form>
+    //   </div>
+    //   <Footer />
+    // </div>
+
     <div>
       <Card />
-
-      
+      <br/>
+      <h1 className="contact-heading">Contact Us</h1>
       <div className="container">
-        <div class=" container__hero-large "><h1 className="container__name">Contact Us</h1></div>
-        <form onSubmit={(e) => onSubmit(e)}>
-          <ul>
-            <li>
-              <label id="fname" for="search">
-                <span>
-                  Name <span class="container__required-star">*</span>
-                </span>
-              </label>
-              <input
-                type="text"
-                name="Fullname"
-                id="search"
-                required
-                value={Fullname}
-                onChange={(e) => onInputChange(e)}
-              />
-              {userErr ? (
-                <span className="contact-form__txt">
-                  {" "}
-                  Please Type correct value...
-                </span>
-              ) : (
-                ""
-              )}
-            </li>
-            <li>
-              <label id="fname2" for="search2">
-                <span>
-                  Topic<span class="container__required-star">*</span>
-                </span>
-              </label>
-              <input
-                type="text"
-                id="search2"
-                name="Topic"
-                required
-                value={Topic}
-                required
-                onChange={(e) => onInputChange(e)}
-              />
-              {topicErr ? (
-                <span className="contact-form__txt">
+        <div className="row">
+          <div className="col-md-8 mx-auto">
+            <div id="contact-form">
+              <form onSubmit={(e) => onSubmit(e)} class="form">
+                <div className="form-group ">
+                  <input
+                    type="text"
+                    name="Fullname"
+                    id="search"
+                    placeholder="Enter your name"
+                    required
+                    className="form-control"
+                    minLength={3}
+                    maxLength={50}
+                    value={Fullname}
+                    onChange={(e) => onInputChange(e)}
+                  />
+                  {userErr ? (
+                    <span className="contact-form__txt">
+                      {" "}
+                      Please Type correct value...
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                  <label className="form-label" id="fname" for="search">
+                    Name
+                  </label>
+                </div>
+                <div className="form-group ">
+                  <input
+                    type="text"
+                    id="search2"
+                    name="Topic"
+                    required
+                    value={Topic}
+                    class="form-control"
+                    placeholder="Enter your Topic"
+                    onChange={(e) => onInputChange(e)}
+                  />
+                  {topicErr ? (
+                    <span  className="contact-form__txt">
+                      Please Type corrcet value..
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                  <label className="form-label" id="fname2" for="search2">
+                    Topic
+                  </label>
+                </div>
+                <div className="form-group ">
+                  <textarea
+                    className="form-control textarea"
+                    name="Details"
+                    onChange={(e) => onInputChange(e)}
+                    id="search"
+                    value={Details}
+                    rows="4"
+                    placeholder="Write a details"
+                  ></textarea>
+                   {detailsErr ? (
+               <span className="contact-form__txt">
                   Please Type corrcet value..
                 </span>
               ) : (
                 ""
               )}
-            </li>
-            <li>
-              <label for="details" id="search">
-                 <span> 
-                  Details<span className="container__required-star">*</span>
-                 </span> 
-              </label>
-              <input
-                type="textarea rows=4"
-                cols="50"
-                id="search"
-                name="Details"
-                value={Details}
-                onChange={(e) => onInputChange(e)}
-              />
-              {detailsErr ? (
-                <span className="contact-form__txt">
-                  Please Type corrcet value..
-                </span>
-              ) : (
-                ""
-              )}
-            </li>
-            <li>
-              <input type="submit" />
-            </li>
-          </ul>
-        </form>
-        
+                  <label class="form-label" for="details" id="search">
+                    Details
+                  </label>
+                </div>
+                <button type="submit" className="submit-button">
+                  Submit{" "}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      <Footer/>
     </div>
-    
   );
 };
 

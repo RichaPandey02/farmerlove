@@ -157,7 +157,9 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
+.nav__decorators{
+  text-decoration: none;
+}
 .nav__right {
   text-align: center;
   color: #fff;

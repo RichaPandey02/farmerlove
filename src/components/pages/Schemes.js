@@ -74,7 +74,7 @@ const Schemes = () => {
   const UpadateFunction = (resp) => {
     console.log(resp);
     id = resp.data._id;
-    alert("Do you want to update tour data?🙄🙄");
+    // alert("Do you want to update tour data?🙄🙄");
   };
 
   const cellEditing = (resp) => {
@@ -82,7 +82,7 @@ const Schemes = () => {
 
     axios.put(`http://localhost:3000/api/scheme/${id}`, resp.data);
     console.log(resp);
-    alert("your data has been updated 🙂☺ ");
+    // alert("your data has been updated 🙂☺ ");
   };
   const cellDeleteing = (resp) => {
     id = resp.data._id;
@@ -117,6 +117,7 @@ const Schemes = () => {
           container table-responsive-sm"
         >
           <AgGridReact
+          // suppressColumnVirtualisation={process.env.NODE_ENV === "test"}
             columnDefs={columns}
             defaultColDef={defaultColDef}
             onGridReady={onGridReady}

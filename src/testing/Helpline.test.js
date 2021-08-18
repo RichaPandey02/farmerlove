@@ -1,12 +1,75 @@
 import Helplines from "../components/pages/Helplines";
 import { render, screen, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import  rowStyle from 'ag-grid-community'
+import React from "react";
+import { AgGridReact } from "ag-grid-react";
 import Carousel from "../components/layout/Carousel";
 import { BrowserRouter } from "react-router-dom";
 import Footer from "../components/layout/Footer";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import Card from "../components/pages/Card";
+import Adapter from "enzyme-adapter-react-16";
+import { configure } from "enzyme";
+configure({ adapter: new Adapter() });
+
+// ignore license errors
+jest.spyOn(console, "error").mockImplementation(() => {});
+// grid warnings?
+jest.spyOn(console, "warn").mockImplementation(() => {});
+
+const testData = [];
+
+const setRowData = (wrapper, rowData) => {
+  return new Promise(function (resolve, reject) {
+    wrapper.setState({ rowData }, () => {
+      wrapper.update();
+      resolve();
+    });
+  });
+};
+
+const ensureGridApiHasBeenSet = (wrapper) => {
+  return new Promise(function (resolve, reject) {
+    (function waitForGridReady() {
+      if (wrapper.instance().gridApi) {
+        resolve(wrapper);
+        return;
+      }
+      setTimeout(waitForGridReady, 100);
+    })();
+  });
+};
+
+describe("Grid Actions Panel", () => {
+  let wrapper = null;
+  let agGridReact = null;
+
+  beforeEach((done) => {
+    wrapper = mount(<Helplines />);
+    agGridReact = wrapper.find(AgGridReact).instance();
+
+    ensureGridApiHasBeenSet(wrapper)
+      .then(() => setRowData(wrapper, testData))
+      .then(() => done());
+  });
+
+  afterEach(() => {
+    wrapper.unmount();
+    wrapper = null;
+    agGridReact = null;
+  });
+  it("renders without crashing", () => {
+    expect(
+      wrapper.find(".ag-theme-alpine>.manage-table").exists()
+    ).toBeTruthy();
+  });
+});
+
+it("it should be contain the following text", () => {
+  const result =
+    " Bharat Sarkar Has Started A Kisan Call Center For The Support Of The Farmers.";
+  expect(result).toBe(result);
+});
 
 afterEach(() => {
   cleanup();
@@ -52,10 +115,7 @@ test("to check whether Helplines component rendered", () => {
     </BrowserRouter>
   );
 });
-it("the function name shloud be",()=>{
-  const functionname=rowStyle();
-  expect(functionname).toEqual(functionname);
-})
+
 it("the background color should be #192a56", () => {
   const color = "#192a56";
   expect(color).toEqual("#192a56");

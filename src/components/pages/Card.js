@@ -1,11 +1,9 @@
 //card with flexbox code....
 import React from "react";
 import slide from "../styles/slide.css";
-
 const Slider = () => {
   return (
     <body>
-      
       <div class="proj_images">
         <div class="proj_images-images">
           <img

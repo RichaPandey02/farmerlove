@@ -75,7 +75,7 @@ const ImportantAddress = () => {
   const UpadateFunction = (resp) => {
     console.log(resp);
     id = resp.data._id;
-    alert("Do you want to update tour data?🙄🙄");
+    // alert("Do you want to update tour data?🙄🙄");
   };
 
   const cellEditing = (resp) => {
@@ -83,7 +83,7 @@ const ImportantAddress = () => {
 
     axios.put(`http://localhost:3000/api/soil/${id}`, resp.data);
     console.log(resp);
-    alert("your data has been updated 🙂☺ ");
+    // alert("your data has been updated 🙂☺ ");
   };
   const cellDeleteing = (resp) => {
     id = resp.data._id;

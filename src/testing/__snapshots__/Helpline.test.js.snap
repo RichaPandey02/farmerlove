@@ -9,6 +9,7 @@ exports[`shallow Helplines Page render the class name for paragarph 1`] = `
   >
     <br />
     <h1
+      className="about-para__helpline"
       data-testid="helpline"
     >
       Available Helplines 😊😊
