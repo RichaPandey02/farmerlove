@@ -17,27 +17,27 @@ import { BrowserRouter } from "react-router-dom";
 //     it('render the class',()=>{
 //         let wrapper=shallow(<Navbar/>)
 //         console.log(wrapper.debug())
-//         expect(wrapper.exists('.nav-margin')).toEqual(false)
+//         expect(wrapper.exists('.nav-margin')).toEqual(true)
 //     })
 //     it('render the header class',()=>{
 //       let wrapper=shallow(<Navbar/>)
 //       console.log(wrapper.debug())
-//       expect(wrapper.exists('.nav__header')).toEqual(false)
+//       expect(wrapper.exists('.nav__header')).toEqual(true)
 //   })
 //     it('render the className for navlink',()=>{
-//         let wrapper=shallow(<NavBar/>)
+//         let wrapper=shallow(<Navbar/>)
 //         console.log(wrapper.debug())
 //         expect(wrapper.exists('.nav__link--active')).toEqual(false)
         
 //     })
    
 //     it('render the className for left arrow',()=>{
-//         let wrapper=shallow(<NavBar/>)
+//         let wrapper=shallow(<Navbar/>)
 //         console.log(wrapper.debug())
 //         expect(wrapper.exists('.nav__title')).toEqual(true)
 //     })
 //     it('render the className for right arrow',()=>{
-//         let wrapper=shallow(<NavBar/>)
+//         let wrapper=shallow(<Navbar/>)
 //         console.log(wrapper.debug())
 //         expect(wrapper.exists('.nav__link--color')).toEqual(true)
 //     })

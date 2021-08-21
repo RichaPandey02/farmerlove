@@ -5,7 +5,7 @@ import renderer from "react-test-renderer";
 import Carousel from "../components/layout/Carousel"
 import { BrowserRouter } from "react-router-dom";
 import Footer from '../components/layout/Footer'
-import {configure,mount} from 'enzyme';
+import {configure,mount,e} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 import { AgGridReact } from 'ag-grid-react';
@@ -67,6 +67,12 @@ describe('Grid Actions Panel', () => {
   it('renders without crashing', () => {
     expect(wrapper.find('.ag-theme-alpine>.manage-table').exists()).toBeTruthy();
     // expect(wrapper.find('. container table-responsive-sm).exists()).toBeTruthy();
+  });
+  it(`filters "State" column by "Tamil Nadu"`, () => {
+    wrapper.instance().filterBtnHandler("STATE", "Bihar");
+    agGridReact.gridApi.forEachNodeAfterFilter(node => {
+      expect(node.data["STATE"]).toEqual("Bihar");
+    });
   });
 })
 
@@ -180,4 +186,50 @@ it("it should be contain the delete text ",()=>{
     
   const result="your data has been deleted"
 expect(result).toBe(result);
+})
+describe('snapshot2',()=>{
+  it('snapshot for Mandi',()=>{
+    let wrapper=shallow(<Mandi/>)
+    console.log(wrapper.debug())
+    expect(wrapper.exists(".Mandi-heading")).toEqual(true);
+  })
+  
+})
+it('Aggrid should render ',()=>{
+  const component=shallow(<Mandi/>);
+  const resp={
+    
+    data:{'STATE':'ANDHRA PRADESH'},
+    oldValue:'Bihar',
+    value:'Bihar'  
+    
+  }
+  let a=1;
+  
+  const gridcomp=component.find('AgGridReact');
+  gridcomp.simulate('CellEditingStopped',resp,a);
+  expect(gridcomp).toBeTruthy();
+})
+
+it('Aggrid should render the property for state  ',()=>{
+  const component=shallow(<Mandi/>);
+  const resp={
+    data:{
+      'title':"ANDHRA PRADESH"
+    }
+  }
+  const gridcomp=component.find('AgGridReact');
+  gridcomp.simulate('RowDoubleClicked',resp);
+  expect(gridcomp).toBeTruthy();
+})
+it('Aggrid should render the property for Market  ',()=>{
+  const component=shallow(<Mandi/>);
+  const resp={
+    data:{
+      'MARKET':"Jainath "
+    }
+  }
+  const gridcomp=component.find('AgGridReact');
+  gridcomp.simulate('RowDoubleClicked',resp);
+  expect(gridcomp).toBeTruthy();
 })

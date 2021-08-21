@@ -11,14 +11,14 @@ import {
 } from "react-router-dom";
 
 import Footer from './components/layout/Footer';
-import Contact from './components/pages/Contact';
+ import Contact from './components/pages/ContactForm';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import Home from './components/pages/Home';
 import Impd from './components/pages/Impd'
 import Schemes from './components/pages/Schemes';
-// import '../node_modules/bootstrap/dist/css/bootstrap.css';
+//  import '../node_modules/bootstrap/dist/css/bootstrap.css';
 // import '../node_modules/bootstrap/dist/js/bootstrap.js'
 
 import Mandi from './components/pages/Mandi'
@@ -43,7 +43,7 @@ function App() {
         
        
         <Route exact path="/schemes" component={Schemes} />
-        <Route exact path="/contactus" component={Contact} />
+         <Route exact path="/contactus" component={Contact} /> 
         {/* <Route exact path="/Rabi" component={Rabi} />  */}
         {/* <Route exact path="/Khareef" component={Khareef} />  */}
         <Route component={NotFound} /> 

@@ -19,7 +19,7 @@ const Helplines = () => {
   };
 
   const onGridReady = (params) => {
-    console.log("grid is ready");
+    
     fetch("http://localhost:3000/api/HelplineSchema")
       .then((resp) => resp.json())
       .then((resp) => params.api.applyTransaction({ add: resp }));

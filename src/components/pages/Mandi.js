@@ -15,7 +15,7 @@ const Mandi = () => {
     color: "#192a56",
   };
   const onGridReady = (params) => {
-    console.log("grid is ready");
+    
     fetch("http://localhost:3000/api/mandischema")
       .then((resp) => resp.json())
       .then((resp) => params.api.applyTransaction({ add: resp }));
@@ -71,16 +71,16 @@ const Mandi = () => {
   };
   let id;
   const UpadateFunction = (resp) => {
-    console.log(resp);
+    // console.log(resp);
     id = resp.data._id;
-    alert("Do you want to update your data?🙄🙄");
+    // alert("Do you want to update your data?🙄🙄");
   };
 
   const cellEditing = (resp) => {
     id = resp.data._id;
 
     axios.put(`http://localhost:3000/api/mandi/${id}`, resp.data);
-    console.log(resp);
+    // console.log(resp);
     // alert("your data has been updated😊😊");
   };
   const cellDeleteing = (resp) => {

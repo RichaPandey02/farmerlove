@@ -14,7 +14,6 @@ const ImportantAddress = () => {
     color: "#192a56",
   };
   const onGridReady = (params) => {
-    console.log("grid is ready");
     fetch("http://localhost:3000/api/SoilSchema")
       .then((resp) => resp.json())
       .then((resp) => params.api.applyTransaction({ add: resp }));
@@ -73,7 +72,7 @@ const ImportantAddress = () => {
 
   let id;
   const UpadateFunction = (resp) => {
-    console.log(resp);
+    // console.log(resp);
     id = resp.data._id;
     // alert("Do you want to update tour data?🙄🙄");
   };
@@ -82,7 +81,7 @@ const ImportantAddress = () => {
     id = resp.data._id;
 
     axios.put(`http://localhost:3000/api/soil/${id}`, resp.data);
-    console.log(resp);
+    // console.log(resp);
     // alert("your data has been updated 🙂☺ ");
   };
   const cellDeleteing = (resp) => {
@@ -91,7 +90,7 @@ const ImportantAddress = () => {
       remove: [resp.node.data],
     });
     axios.delete(`http://localhost:3000/api/soil/${id}`, resp.data);
-    alert("your data has been Deleted 🙂☺ ");
+    // alert("your data has been Deleted 🙂☺ ");
   };
 
   return (

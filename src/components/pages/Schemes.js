@@ -71,9 +71,9 @@ const Schemes = () => {
   };
 
   let id;
-  const UpadateFunction = (resp) => {
-    console.log(resp);
-    id = resp.data._id;
+  const UpadateFunction = (res) => {
+    // console.log(resp);
+    id = res.data._id;
     // alert("Do you want to update tour data?🙄🙄");
   };
 
@@ -81,7 +81,8 @@ const Schemes = () => {
     id = resp.data._id;
 
     axios.put(`http://localhost:3000/api/scheme/${id}`, resp.data);
-    console.log(resp);
+    // console.log(resp);
+    
     // alert("your data has been updated 🙂☺ ");
   };
   const cellDeleteing = (resp) => {
@@ -93,25 +94,23 @@ const Schemes = () => {
   };
 
   const onExportClick = () => {
-    gridApi.exportDataAsCsv();
+    // gridApi.exportDataAsCsv();
   };
 
   return (
     <div>
       <div>
         <Card />
-
+        <br/>
         <section>
           <h1 className="scheme-heading">
-            <br />
+        
             Schemes Available For Market Price
           </h1>
         </section>
 
-        {/* <button onClick={() => onExportClick()} className="export-btn">
-          { export }
-        </button> */}
-
+       
+<br/>
         <div
           className="ag-theme-alpine manage-table
           container table-responsive-sm"

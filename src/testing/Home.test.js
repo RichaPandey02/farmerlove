@@ -1,18 +1,30 @@
 import Home from "../components/pages/Home";
-import { render, cleanup } from "@testing-library/react";
+import { render, cleanup,screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import renderer from "react-test-renderer";
 import Carousel from "../components/layout/Carousel";
 import { BrowserRouter } from "react-router-dom";
 import Footer from "../components/layout/Footer";
+import { shallow } from "enzyme";
 
-afterEach(() => {
-  cleanup();
+
+it("render the classname for root element", () => {
+  let wrapper = shallow(<Home />);
+  console.log(wrapper.debug());
+  expect(wrapper.exists(".home")).toEqual(true);
+});
+it("render the classname for heading", () => {
+  let wrapper = shallow(<Home />);
+  console.log(wrapper.debug());
+  expect(wrapper.exists(".home__heading")).toEqual(true);
+});
+it("render the classname for paragraph", () => {
+  let wrapper = shallow(<Home />);
+  console.log(wrapper.debug());
+  expect(wrapper.exists(".home__para")).toEqual(true);
 });
 
-it("demo testing", () => {
-  expect(true).toBe(true);
-});
+
 test("to check whether Home component rendered", () => {
   render(
     <BrowserRouter>
@@ -28,26 +40,11 @@ test("to check whether carausel component rendered", () => {
   );
 });
 
-it("the background color should be #192a56", () => {
-  const color = "#192a56";
-  expect(color).toEqual("#192a56");
-});
-it("the background should be", () => {
-  const background = "transparent";
-  expect(background).toEqual("transparent");
-});
+
 
 test("matches snapshot", () => {
   const tree = renderer.create(<Home />).toJSON();
   console.log(tree);
-});
-it("to be equal to 1", () => {
-  const num = 1;
-  expect(num).toEqual(1);
-});
-it("should be truthy", () => {
-  //Assertions/Expectations
-  expect(true).toBeTruthy();
 });
 
 const tree = renderer.create(<Home />);
@@ -60,4 +57,17 @@ test("to check whether Footer component rendered", () => {
       <Footer />
     </BrowserRouter>
   );
+});
+
+test("should render the heading ", () => {
+  render(<Home />);
+  const element = screen.getByTestId("home-page");
+  expect(element).toBeInTheDocument();
+  expect(element).toHaveTextContent("Farmer's Friend");
+});
+test("should render paragraph  text ", () => {
+  render(<Home />);
+  const element = screen.getByTestId("home-para");
+  expect(element).toBeInTheDocument();
+  expect(element).toHaveTextContent(" The ultimate goal of farming is not the growing of crops, but the cultivation and perfectiion of human beings.");
 });

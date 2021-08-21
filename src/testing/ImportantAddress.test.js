@@ -134,3 +134,59 @@ it("the col property should be", () => {
   const sortable = true;
   expect(sortable).toBe(true)
 });
+
+
+it('Aggrid should render ',()=>{
+  const component=shallow(<Impd/>);
+  const resp={
+    
+    data:{'STATE':'Bihar'},
+    oldValue:'Bihar',
+    value:'Bihar'  
+    
+  }
+  let a=1;
+  
+  const gridcomp=component.find('AgGridReact');
+  gridcomp.simulate('CellEditingStopped',resp,a);
+  expect(gridcomp).toBeTruthy();
+})
+
+it('Aggrid should render the property for state  ',()=>{
+  const component=shallow(<Impd/>);
+  const resp={
+    data:{
+      'DIST':"Araria"
+    }
+  }
+  const gridcomp=component.find('AgGridReact');
+  gridcomp.simulate('RowDoubleClicked',resp);
+  expect(gridcomp).toBeTruthy();
+})
+
+
+
+
+it('Aggrid should render the property for onGridReady  ',()=>{
+  const component=shallow(<Impd/>);
+  const resp={
+    data:{
+      'DIST':"Araria"
+    }
+  }
+  const gridcomp=component.find('AgGridReact');
+  gridcomp.simulate('onGridReady',resp);
+  expect(gridcomp).toBeTruthy();
+})
+it('Aggrid should render the property for pagination  ',()=>{
+  const component=shallow(<Impd/>);
+ 
+  const gridcomp=component.find('AgGridReact');
+  gridcomp.simulate('pagination');
+  expect(gridcomp).toBeTruthy();
+})
+
+
+
+
+

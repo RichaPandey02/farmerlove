@@ -3,7 +3,7 @@ import contactus from "../styles/contactus.scss";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Card from "./Card";
-import Footer from "../layout/Footer";
+// import Footer from "../layout/Footer";
 
 const Contact = () => {
   
@@ -23,7 +23,7 @@ const Contact = () => {
   
   const onInputChange = (e) => {
   
-    let pattern = /^[a-zA-Z ]/;
+   
     let item = e.target.value;
     if (item.length < 3  ) {
       setUserErr(true);
@@ -62,16 +62,14 @@ const Contact = () => {
       alert("type correct value");
     }
 
-    // if (patternname.test(user)) {
-    //   alert("please enter valid value");
-    // } 
+   
     
     else {
       e.preventDefault();
       await axios.post("http://localhost:3000/api/contactUs", user);
       history.push("/home");
 
-      alert("you query has been submitted..... 😊😊");
+      // alert("you query has been submitted..... 😊😊");
     }
   };
 

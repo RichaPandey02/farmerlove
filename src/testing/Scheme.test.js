@@ -2,15 +2,19 @@ import Schemes from "../components/pages/Schemes";
 import {render,cleanup} from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer'
-
+import { act } from 'react-dom/test-utils';
 import Carousel from "../components/layout/Carousel"
 import Footer from '../components/layout/Footer'
 import { BrowserRouter } from "react-router-dom";
 import {shallow,mount} from 'enzyme';
 import {configure} from 'enzyme';
 import React from 'react';
+
+
+
 import { AgGridReact } from 'ag-grid-react';
 import Adapter from 'enzyme-adapter-react-16';
+import { Card } from "react-bootstrap";
 configure({adapter:new Adapter()});
 
 
@@ -123,12 +127,7 @@ it("it should be contain the update text ",()=>{
 afterEach(()=>{
     cleanup();
 })
-// test('should render Schemes component',()=>{
-//     render(<Schemes/>);
-//     const element=screen.getByTestId('testcase');
-//      expect(element).toBeInTheDocument();
-    
-// })
+
 
 
 
@@ -147,17 +146,10 @@ it("the background color should be #192a56", () => {
     expect(sortable).toBe(true)
   });
  
-
-
-
-  
-
-
-
 test("to check whether scheme component rendered", () => {
     render(
       <BrowserRouter>
-          <Carousel />
+          <Card />
       </BrowserRouter>
     );
   });  
@@ -184,8 +176,71 @@ it("to be equal to 1",()=>{
     it('snapshot for scheme',()=>{
       let wrapper=shallow(<Schemes/>)
       console.log(wrapper.debug())
-      // expect(wrapper.exists('.export-btn')).toEqual(true)
+      expect(wrapper.exists(".scheme-heading")).toEqual(true);
     })
     
   })
+ 
+  it('Aggrid should render properly',()=>{
+    const component=shallow(<Schemes/>);
+    const resp={
+      data:{
+        'State':'Tamil Nadu'
+      }
+    }
+    const gridcomp=component.find('AgGridReact');
+    gridcomp.simulate('RowDoubledClicked',resp);
+    expect(gridcomp).toBeTruthy();
+  })
+  it('Aggrid should render the property ',()=>{
+    const component=shallow(<Schemes/>);
+    const res={
+      data:{
+        'Website':'http://agritech.tnau.ac.in/'
+      }
+    }
+    const gridcomp=component.find('AgGridReact');
+    gridcomp.simulate('RowDoubleClicked',res);
+    expect(gridcomp).toBeTruthy();
+  })
+  it('Aggrid should render the property for  ',()=>{
+    const component=shallow(<Schemes/>);
+    const res={
+      data:{
+        'title':"Training Programme To Farmers In Handling And Maintenance Of Agricultural Machinery"
+      }
+    }
+    const gridcomp=component.find('AgGridReact');
+    gridcomp.simulate('RowDoubleClicked',res);
+    expect(gridcomp).toBeTruthy();
+  })
+  it('Aggrid should render ',()=>{
+    const component=shallow(<Schemes/>);
+    const resp={
+      
+      data:{'State':'Tamil Nadu'},
+      oldValue:'Tamil Nadu',
+      value:'Tamil Nadu'  
+      
+    }
+    let a=1;
+    
+    const gridcomp=component.find('AgGridReact');
+    gridcomp.simulate('CellEditingStopped',resp,a);
+    expect(gridcomp).toBeTruthy();
+  })
+  it('Aggrid should render for state ',()=>{
+    const component=shallow(<Schemes/>);
+    const resp={
+      
+      data:{'State':'Tamil Nadu'},
+      
+      
+    }
+   const gridcomp=component.find('AgGridReact');
+    gridcomp.simulate('cellDeleteing',resp);
+    expect(gridcomp).toBeTruthy();
+  })
+ 
+
   

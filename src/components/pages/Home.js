@@ -7,10 +7,10 @@ const Home = () => {
   return (
     <div className="home">
       <br />
-      <h1 className="home__heading">Farmer's Friend</h1>
-      <p className="home__para">
+      <h1 className="home__heading" data-testid="home-page">Farmer's Friend</h1>
+      <p className="home__para" data-testid="home-para">
         The ultimate goal of farming is not the growing of crops, but the
-        cultivation and perfection of human beings.{" "}
+        cultivation and perfection of human beings.
       </p>
       <br />
       <Carousel />
