@@ -69,3 +69,8 @@ it("to be equal to 1",()=>{
     
   })
   
+  const onGridReady=require('../components/pages/Schemes')
+  it('returns the first title of scheme',async()=>{
+    const title=await onGridReady();
+    expect(title).toEqual('')
+  })
